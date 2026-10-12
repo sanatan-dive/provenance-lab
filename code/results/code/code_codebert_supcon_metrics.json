@@ -1,0 +1,43 @@
+{
+  "name": "code_codebert_supcon",
+  "n_test": 1000,
+  "accuracy": 0.955,
+  "precision": 0.952286282306163,
+  "recall": 0.958,
+  "f1": 0.9551345962113659,
+  "auc_roc": 0.989134,
+  "epochs_run": 3,
+  "best_epoch": 3,
+  "supcon_weight": 0.5,
+  "train_seconds": 1213,
+  "smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.15119532147422432,
+      "train_acc": 0.95,
+      "val_loss": 0.2382515297923237,
+      "val_acc": 0.9275
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.11589182056486606,
+      "train_acc": 0.97,
+      "val_loss": 0.1557432272285223,
+      "val_acc": 0.935
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.031111727873794733,
+      "train_acc": 0.9925,
+      "val_loss": 0.12245209769520443,
+      "val_acc": 0.96
+    }
+  ],
+  "train_acc_best": 0.9925,
+  "val_acc_best": 0.96,
+  "n_train": 4000,
+  "use_handcrafted": true,
+  "max_len": 256,
+  "generalization_gap": 0.03750000000000009
+}

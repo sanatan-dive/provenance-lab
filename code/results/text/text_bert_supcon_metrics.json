@@ -1,0 +1,45 @@
+{
+  "name": "text_bert_supcon",
+  "n_test": 1000,
+  "accuracy": 0.983,
+  "precision": 0.9707602339181286,
+  "recall": 0.996,
+  "f1": 0.983218163869694,
+  "auc_roc": 0.9992240000000001,
+  "epochs_run": 3,
+  "best_epoch": 1,
+  "supcon_weight": 0.5,
+  "train_seconds": 1347,
+  "smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.030095836399123072,
+      "train_acc": 0.9925,
+      "val_loss": 0.060664582094177605,
+      "val_acc": 0.975
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.010657991719199345,
+      "train_acc": 1.0,
+      "val_loss": 0.0724141089618206,
+      "val_acc": 0.9775
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.08775083743035793,
+      "train_acc": 0.97,
+      "val_loss": 0.18153839856386184,
+      "val_acc": 0.935
+    }
+  ],
+  "train_acc_best": 0.9925,
+  "val_acc_best": 0.975,
+  "modality": "text",
+  "dataset": "HC3/all",
+  "n_train": 4000,
+  "use_handcrafted": true,
+  "max_len": 256,
+  "generalization_gap": 0.009500000000000064
+}

@@ -1,0 +1,32 @@
+{
+  "name": "audio_cnn_supcon_smoke",
+  "n_test": 64,
+  "accuracy": 0.6875,
+  "precision": 0.8333333333333334,
+  "recall": 0.46875,
+  "f1": 0.6,
+  "auc_roc": 0.779296875,
+  "epochs_run": 1,
+  "best_epoch": 1,
+  "supcon_weight": 0.5,
+  "train_seconds": 3,
+  "smoke": true,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6780444383621216,
+      "train_acc": 0.53125,
+      "val_loss": 0.7020165125528971,
+      "val_acc": 0.5
+    }
+  ],
+  "train_acc_best": 0.53125,
+  "val_acc_best": 0.5,
+  "n_train": 128,
+  "use_handcrafted": true,
+  "train_speakers": 51,
+  "test_speakers": 3,
+  "lr": 0.0003,
+  "batch_size": 32,
+  "generalization_gap": -0.15625
+}

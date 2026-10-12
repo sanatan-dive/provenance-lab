@@ -1,0 +1,38 @@
+{
+  "name": "text_bert_diverse",
+  "n_test": 1000,
+  "accuracy": 0.647,
+  "precision": 0.6002728512960437,
+  "recall": 0.88,
+  "f1": 0.7137064071370641,
+  "auc_roc": 0.746508,
+  "epochs_run": 2,
+  "best_epoch": 1,
+  "supcon_weight": 0.5,
+  "train_seconds": 1450,
+  "smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.23799542874097823,
+      "train_acc": 0.89875,
+      "val_loss": 0.36924401089549064,
+      "val_acc": 0.83875
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.22600421771407128,
+      "train_acc": 0.915,
+      "val_loss": 0.6793195797502994,
+      "val_acc": 0.805
+    }
+  ],
+  "train_acc_best": 0.89875,
+  "val_acc_best": 0.83875,
+  "modality": "text",
+  "dataset": "HC3 + MAGE-train (no OPT); tested on MAGE test",
+  "n_train": 8000,
+  "use_handcrafted": true,
+  "max_len": 256,
+  "generalization_gap": 0.25175000000000003
+}

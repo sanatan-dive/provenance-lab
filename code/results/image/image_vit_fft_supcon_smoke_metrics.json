@@ -1,0 +1,31 @@
+{
+  "name": "image_vit_fft_supcon_smoke",
+  "n_test": 64,
+  "accuracy": 0.65625,
+  "precision": 0.65625,
+  "recall": 0.65625,
+  "f1": 0.65625,
+  "auc_roc": 0.7998046875,
+  "epochs_run": 1,
+  "best_epoch": 1,
+  "supcon_weight": 0.5,
+  "train_seconds": 3,
+  "smoke": true,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.51509028673172,
+      "train_acc": 0.859375,
+      "val_loss": 0.6477888955010308,
+      "val_acc": 0.3333333333333333
+    }
+  ],
+  "train_acc_best": 0.859375,
+  "val_acc_best": 0.3333333333333333,
+  "vit": "WinKawaks/vit-small-patch16-224",
+  "use_handcrafted": true,
+  "use_freq": true,
+  "n_train": 96,
+  "batch_size": 32,
+  "generalization_gap": 0.203125
+}

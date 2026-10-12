@@ -1,0 +1,52 @@
+{
+  "name": "image_vit_fft_ce",
+  "n_test": 2000,
+  "accuracy": 0.971,
+  "precision": 0.958171206225681,
+  "recall": 0.985,
+  "f1": 0.9714003944773175,
+  "auc_roc": 0.9964519999999999,
+  "epochs_run": 4,
+  "best_epoch": 2,
+  "supcon_weight": 0.0,
+  "train_seconds": 427,
+  "smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.04474974683436908,
+      "train_acc": 0.9851973684210527,
+      "val_loss": 0.09459792037804922,
+      "val_acc": 0.9666666666666667
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.012955995049866798,
+      "train_acc": 0.9967105263157895,
+      "val_loss": 0.0834714600071311,
+      "val_acc": 0.97
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.004718667151265484,
+      "train_acc": 0.9983552631578947,
+      "val_loss": 0.11681849802456175,
+      "val_acc": 0.96
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.000704530228081,
+      "train_acc": 1.0,
+      "val_loss": 0.10120399307459593,
+      "val_acc": 0.9733333333333334
+    }
+  ],
+  "train_acc_best": 0.9967105263157895,
+  "val_acc_best": 0.97,
+  "vit": "WinKawaks/vit-small-patch16-224",
+  "use_handcrafted": true,
+  "use_freq": true,
+  "n_train": 6000,
+  "batch_size": 32,
+  "generalization_gap": 0.025710526315789517
+}

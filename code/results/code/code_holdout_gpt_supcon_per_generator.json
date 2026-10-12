@@ -1,0 +1,26 @@
+{
+  "codellama": {
+    "n": 100,
+    "accuracy": 0.95
+  },
+  "gpt": {
+    "n": 100,
+    "accuracy": 0.78
+  },
+  "human": {
+    "n": 500,
+    "accuracy": 0.922
+  },
+  "llama3.1": {
+    "n": 100,
+    "accuracy": 0.92
+  },
+  "nxcode": {
+    "n": 100,
+    "accuracy": 0.97
+  },
+  "qwen1.5": {
+    "n": 100,
+    "accuracy": 0.95
+  }
+}

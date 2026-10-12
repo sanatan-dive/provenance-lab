@@ -1,0 +1,45 @@
+{
+  "text": {
+    "Perplexity threshold": {
+      "accuracy": 0.979,
+      "f1": 0.9791,
+      "auc_roc": 0.9905
+    },
+    "TF-IDF + logistic regression": {
+      "accuracy": 0.961,
+      "f1": 0.9606,
+      "auc_roc": 0.9913
+    },
+    "Forensic features + logistic regression": {
+      "accuracy": 0.984,
+      "f1": 0.984,
+      "auc_roc": 0.9909
+    }
+  },
+  "code": {
+    "TF-IDF (char n-grams) + logistic regression": {
+      "accuracy": 0.931,
+      "f1": 0.9305,
+      "auc_roc": 0.9819
+    },
+    "Forensic features + logistic regression": {
+      "accuracy": 0.838,
+      "f1": 0.8326,
+      "auc_roc": 0.9181
+    }
+  },
+  "image": {
+    "Forensic features + logistic regression": {
+      "accuracy": 0.8275,
+      "f1": 0.8241,
+      "auc_roc": 0.9038
+    }
+  },
+  "audio": {
+    "Forensic features + logistic regression": {
+      "accuracy": 0.76,
+      "f1": 0.7561,
+      "auc_roc": 0.8479
+    }
+  }
+}

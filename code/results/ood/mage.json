@@ -1,0 +1,70 @@
+{
+  "n": 1000,
+  "domains": 14,
+  "generators": 27,
+  "models": {
+    "Ours (BERT + forensic + SupCon)": {
+      "hc3": 0.983,
+      "mage": {
+        "accuracy": 0.571,
+        "f1": 0.4392156862745098,
+        "auc_roc": 0.605992
+      }
+    },
+    "TF-IDF + logistic regression": {
+      "hc3": 0.964,
+      "mage": {
+        "accuracy": 0.525,
+        "f1": 0.23510466988727857,
+        "auc_roc": 0.5408040000000001
+      }
+    },
+    "Perplexity threshold": {
+      "hc3": 0.955,
+      "mage": {
+        "accuracy": 0.632,
+        "f1": 0.4742857142857143,
+        "auc_roc": 0.623448
+      }
+    }
+  },
+  "ours_by_domain": {
+    "cmv": 0.6162790697674418,
+    "cnn": 0.3888888888888889,
+    "dialogsum": 0.36363636363636365,
+    "eli5": 0.5862068965517241,
+    "hswag": 0.504950495049505,
+    "imdb": 0.8,
+    "pubmed": 0.375,
+    "roct": 0.6637931034482759,
+    "sci": 0.55,
+    "squad": 0.4819277108433735,
+    "tldr": 0.5544554455445545,
+    "wp": 0.6285714285714286,
+    "xsum": 0.5742574257425742,
+    "yelp": 0.575
+  },
+  "ours_ai_recall_by_family": {
+    "GPT-3.5 / davinci": {
+      "n": 117,
+      "recall": 0.7350427350427351
+    },
+    "LLaMA": {
+      "n": 64,
+      "recall": 0.578125
+    },
+    "OPT": {
+      "n": 145,
+      "recall": 0.12413793103448276
+    },
+    "FLAN-T5 / T0": {
+      "n": 113,
+      "recall": 0.1415929203539823
+    },
+    "GLM / BLOOM / GPT-J / NeoX": {
+      "n": 61,
+      "recall": 0.18032786885245902
+    }
+  },
+  "ours_human_specificity": 0.806
+}

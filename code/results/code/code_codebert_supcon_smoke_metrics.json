@@ -1,0 +1,29 @@
+{
+  "name": "code_codebert_supcon_smoke",
+  "n_test": 31,
+  "accuracy": 0.5161290322580645,
+  "precision": 0.0,
+  "recall": 0.0,
+  "f1": 0.0,
+  "auc_roc": 0.8125,
+  "epochs_run": 1,
+  "best_epoch": 1,
+  "supcon_weight": 0.5,
+  "train_seconds": 7,
+  "smoke": true,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.6692566871643066,
+      "train_acc": 0.5625,
+      "val_loss": 0.6913344065348307,
+      "val_acc": 0.5
+    }
+  ],
+  "train_acc_best": 0.5625,
+  "val_acc_best": 0.5,
+  "n_train": 62,
+  "use_handcrafted": true,
+  "max_len": 256,
+  "generalization_gap": 0.0463709677419355
+}

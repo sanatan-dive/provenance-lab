@@ -1,0 +1,22 @@
+# Environments and dependencies
+code/.venv/
+node_modules/
+__pycache__/
+*.pyc
+.DS_Store
+
+# Datasets (downloaded from Hugging Face, see code/README.md)
+code/data/
+data/
+
+# Model checkpoints (too large for git)
+*.pt
+*.pth
+*.safetensors
+*.bin
+
+# Run logs and office lock files
+code/logs/
+.~lock*
+Presentation/qa/
+Report/page-07.jpg

@@ -1,0 +1,120 @@
+{
+  "text": {
+    "openai-community/roberta-base-openai-detector": {
+      "note": "",
+      "hc3": {
+        "accuracy": 0.928,
+        "f1": 0.9291338582677166,
+        "auc_roc": 0.978016
+      },
+      "ai_label": "Fake",
+      "mage": {
+        "accuracy": 0.655,
+        "f1": 0.5724907063197026,
+        "auc_roc": 0.74447
+      }
+    },
+    "fakespot-ai/roberta-base-ai-text-detection-v1": {
+      "note": "",
+      "hc3": {
+        "accuracy": 0.902,
+        "f1": 0.9102564102564102,
+        "auc_roc": 0.9952679999999998
+      },
+      "ai_label": "AI",
+      "mage": {
+        "accuracy": 0.69,
+        "f1": 0.7318339100346021,
+        "auc_roc": 0.7828339999999999
+      }
+    },
+    "Hello-SimpleAI/chatgpt-detector-roberta": {
+      "note": "Trained on HC3 itself: home advantage on HC3; MAGE is the fair test.",
+      "hc3": {
+        "accuracy": 0.895,
+        "f1": 0.9044585987261147,
+        "auc_roc": 0.9930840000000001
+      },
+      "ai_label": "ChatGPT",
+      "mage": {
+        "accuracy": 0.539,
+        "f1": 0.47554038680318544,
+        "auc_roc": 0.557086
+      }
+    }
+  },
+  "image": {
+    "umm-maybe/AI-image-detector": {
+      "note": "",
+      "cifake": {
+        "accuracy": 0.595,
+        "f1": 0.5096852300242131,
+        "auc_roc": 0.6284540000000001
+      },
+      "ai_label": "artificial",
+      "genimage": {
+        "accuracy": 0.5808571428571428,
+        "f1": 0.548754229467856,
+        "auc_roc": 0.6014174693877551
+      }
+    },
+    "dima806/ai_vs_real_image_detection": {
+      "note": "Trained on CIFAKE itself (per its model card): home advantage, possible test-set overlap.",
+      "cifake": {
+        "accuracy": 0.984,
+        "f1": 0.9840954274353877,
+        "auc_roc": 0.998719
+      },
+      "ai_label": "FAKE",
+      "genimage": {
+        "accuracy": 0.564,
+        "f1": 0.6371849738468854,
+        "auc_roc": 0.6314475102040816
+      }
+    },
+    "Ateeqq/ai-vs-human-image-detector": {
+      "note": "",
+      "cifake": {
+        "accuracy": 0.406,
+        "f1": 0.4575342465753425,
+        "auc_roc": 0.37605999999999995
+      },
+      "ai_label": "ai",
+      "genimage": {
+        "accuracy": 0.6248571428571429,
+        "f1": 0.47584830339321355,
+        "auc_roc": 0.7035515102040817
+      }
+    }
+  },
+  "audio": {
+    "mo-thecreator/Deepfake-audio-detection": {
+      "note": "",
+      "asvspoof": {
+        "accuracy": 0.534,
+        "f1": 0.6812585499316005,
+        "auc_roc": 0.8737280000000001
+      },
+      "ai_label": "fake",
+      "modern": {
+        "accuracy": 0.7798861480075902,
+        "f1": 0.7769230769230769,
+        "auc_roc": 0.8624337481276645
+      }
+    },
+    "MelodyMachine/Deepfake-audio-detection-V2": {
+      "note": "",
+      "asvspoof": {
+        "accuracy": 0.722,
+        "f1": 0.6160220994475138,
+        "auc_roc": 0.8905259999999999
+      },
+      "ai_label": "fake",
+      "modern": {
+        "accuracy": 0.5180265654648957,
+        "f1": 0.1056338028169014,
+        "auc_roc": 0.5645451664938357
+      }
+    }
+  }
+}

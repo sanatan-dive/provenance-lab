@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Provenance Lab: detect AI-generated content</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Familjen+Grotesk:wght@500;600;700&family=Source+Sans+3:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="i-text" viewBox="0 0 24 24"><path d="M5 6h14M5 10h14M5 14h10M5 18h7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-code" viewBox="0 0 24 24"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 5l-3 14" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-image" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="9" cy="10" r="2" fill="currentColor"/><path d="M4 18l5-5 4 4 3-3 4 4" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></symbol>
+  <symbol id="i-audio" viewBox="0 0 24 24"><rect x="9" y="3" width="6" height="11" rx="3" fill="none" stroke="currentColor" stroke-width="2"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></symbol>
+  <symbol id="i-mark" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2.2"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/></symbol>
+</svg>
+
+<header class="top">
+  <div class="top-inner">
+    <a class="brand" href="#"><svg class="mark"><use href="#i-mark"/></svg>Provenance Lab</a>
+    <nav>
+      <a href="#examine">Examine</a>
+      <a href="#results">Results</a>
+      <a href="#method">How it works</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+  <section id="examine" class="examine">
+    <div class="intro">
+      <h1>Was this made by a person or a machine?</h1>
+      <p>Drop in an essay, a Python file, an image or a voice recording. We look for signed credentials and hidden watermarks first, then a detector trained for that kind of content makes the call.</p>
+    </div>
+
+    <dl class="proof" id="proof" aria-label="Test accuracy of each detector">
+      <div><dt><svg><use href="#i-text"/></svg>Essays</dt><dd data-mod="text">training</dd></div>
+      <div><dt><svg><use href="#i-code"/></svg>Code</dt><dd data-mod="code">training</dd></div>
+      <div><dt><svg><use href="#i-image"/></svg>Images</dt><dd data-mod="image">training</dd></div>
+      <div><dt><svg><use href="#i-audio"/></svg>Voice</dt><dd data-mod="audio">training</dd></div>
+    </dl>
+    <p class="proof-note">Accuracy on held-out test data the models never saw.</p>
+
+    <div class="bench">
+      <form class="specimen" id="form">
+        <div class="kinds" role="tablist" aria-label="Kind of content">
+          <button type="button" role="tab" data-kind="text" aria-selected="true"><svg><use href="#i-text"/></svg>Essay</button>
+          <button type="button" role="tab" data-kind="code" aria-selected="false"><svg><use href="#i-code"/></svg>Code</button>
+          <button type="button" role="tab" data-kind="image" aria-selected="false"><svg><use href="#i-image"/></svg>Image</button>
+          <button type="button" role="tab" data-kind="audio" aria-selected="false"><svg><use href="#i-audio"/></svg>Voice</button>
+        </div>
+
+        <div class="stage" id="stage">
+          <textarea id="text" spellcheck="false" placeholder="Paste the essay here…"></textarea>
+          <label class="drop" id="drop" hidden>
+            <input type="file" id="file">
+            <span class="drop-main" id="dropMain">Drop a file here, or click to choose one</span>
+            <span class="drop-sub" id="dropSub"></span>
+            <img id="preview" alt="" hidden>
+            <audio id="audioPreview" controls hidden></audio>
+          </label>
+          <div class="scanline" aria-hidden="true"></div>
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="go" id="go">Examine</button>
+          <span class="hint" id="hint">You can drop any file onto this panel. We work out what it is.</span>
+        </div>
+        <div class="samples">
+          <span>Try a real test sample the model never saw:</span>
+          <button type="button" class="sample" data-label="0">Human-made</button>
+          <button type="button" class="sample" data-label="1">AI-made</button>
+        </div>
+      </form>
+
+      <article class="report" id="report" aria-live="polite">
+        <div class="empty" id="empty">
+          <div class="empty-scale" aria-hidden="true"><span></span><span></span><span></span></div>
+          <p class="empty-title">No report yet</p>
+          <p>Add something on the left and choose Examine. The report shows the verdict, how confident the model is, and which layer of the system decided.</p>
+        </div>
+
+        <div class="filled" id="filled" hidden>
+          <p class="kind-line" id="kindLine"></p>
+          <h2 class="verdict" id="verdict"></h2>
+          <p class="truth" id="truth" hidden></p>
+
+          <div class="scale" id="scale">
+            <div class="track">
+              <div class="zone zone-h"></div><div class="zone zone-u"></div><div class="zone zone-a"></div>
+              <div class="needle" id="needle"><span class="needle-label" id="needleLabel"></span></div>
+            </div>
+            <div class="scale-ends"><span>Human</span><span>Uncertain</span><span>AI-generated</span></div>
+          </div>
+
+          <ol class="layers">
+            <li id="layer1">
+              <span class="layer-n">1</span>
+              <div><h3>Credentials and watermarks</h3><p id="layer1Text"></p></div>
+            </li>
+            <li id="layer2">
+              <span class="layer-n">2</span>
+              <div><h3>Trained detector</h3><p id="layer2Text"></p></div>
+            </li>
+          </ol>
+
+          <section class="evidence" id="evidence" hidden>
+            <h3>Why it decided this</h3>
+            <div id="evidenceBody"></div>
+          </section>
+        </div>
+
+        <div class="error" id="error" hidden></div>
+      </article>
+    </div>
+  </section>
+
+  <section id="results" class="results">
+    <div class="sec-head">
+      <h2>How well it works</h2>
+      <p class="lede">Every number comes from held-out test data. These runs train on small subsets of each dataset on one laptop; full-scale training is future work.</p>
+    </div>
+    <div class="cards" id="cards"></div>
+
+    <div class="sec-head">
+      <h3 class="sub">Compared with simple methods</h3>
+      <p class="lede">The same train and test data, scored by well-known simple detectors: a perplexity threshold, TF-IDF with logistic regression, and our forensic features alone. The deep model has to beat these to earn its place.</p>
+    </div>
+    <div class="compare" id="baselines"><p class="muted">Baselines appear here once computed.</p></div>
+
+    <div id="market"></div>
+
+    <div id="ood"></div>
+
+    <div class="sec-head">
+      <h3 class="sub">What each idea adds</h3>
+      <p class="lede">The same model trained twice, once without the idea and once with it. Everything else stays identical.</p>
+    </div>
+    <div class="compare" id="compare"><p class="muted">Comparison runs appear here when they finish training.</p></div>
+
+    <div class="sec-head">
+      <h3 class="sub">Not overfitting, not underfitting</h3>
+      <p class="lede">10% of each training set is held out for validation. Training stops when validation loss stops improving, and the best epoch is kept. Training and validation curves that fall together mean the model learned patterns rather than memorising.</p>
+    </div>
+    <div class="curves" id="curves"></div>
+
+    <div id="robust"></div>
+
+    <details class="all-runs">
+      <summary>All training runs</summary>
+      <div class="table-wrap">
+        <table id="metrics">
+          <thead><tr><th>Content</th><th>Run</th><th class="num">Accuracy</th><th class="num">Precision</th><th class="num">Recall</th><th class="num">F1</th><th class="num">AUC-ROC</th><th class="num">Train–test gap</th></tr></thead>
+          <tbody><tr><td colspan="8" class="muted">Loading results…</td></tr></tbody>
+        </table>
+      </div>
+    </details>
+  </section>
+
+  <section id="method" class="method">
+    <h2>How it works</h2>
+    <ol class="steps">
+      <li><h3>Check provenance</h3><p>Look for C2PA content credentials, AudioSeal audio watermarks and text watermarks. If one is present, that is proof, and we stop.</p></li>
+      <li><h3>Extract forensic signals</h3><p>Perplexity and burstiness for essays, syntax-tree structure for code, the frequency spectrum for images, MFCC and phase for voice.</p></li>
+      <li><h3>Encode with a deep model</h3><p>BERT for essays, CodeBERT for code, a Vision Transformer plus a frequency CNN for images, and wav2vec 2.0 speech features for voice.</p></li>
+      <li><h3>Learn with contrastive loss</h3><p>Training pulls human samples together and pushes AI samples away, so the model learns what machine-made content has in common rather than one generator's quirks.</p></li>
+      <li><h3>Decide, or say we're unsure</h3><p>Above 70% is called AI, below 30% human. Anything between is flagged for a person to review, because a wrong accusation costs more than a missed one.</p></li>
+    </ol>
+  </section>
+</main>
+
+<footer class="foot">
+  <div class="foot-inner">
+    <span class="brand small"><svg class="mark"><use href="#i-mark"/></svg>Provenance Lab</span>
+    <span>CS756 Project-I. Sanatan Sharma (CO23355) and Ryanveer Singh (CO23353).</span>
+  </div>
+</footer>
+<script src="/static/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+{
+  "mage_accuracy": 0.647,
+  "mage_auc": 0.746508,
+  "hc3_accuracy": 0.932,
+  "human_specificity": 0.414,
+  "ai_recall_by_family": {
+    "GPT-3.5 / davinci": {
+      "n": 117,
+      "recall": 0.9572649572649573
+    },
+    "LLaMA": {
+      "n": 64,
+      "recall": 0.984375
+    },
+    "OPT (held out)": {
+      "n": 145,
+      "recall": 0.8275862068965517
+    },
+    "FLAN-T5 / T0": {
+      "n": 113,
+      "recall": 0.7964601769911505
+    },
+    "GLM / BLOOM / GPT-J / NeoX": {
+      "n": 61,
+      "recall": 0.9016393442622951
+    }
+  },
+  "holdout_family": "opt",
+  "calibrated": {
+    "threshold": 0.89,
+    "chosen_on": "MAGE validation, 1,000 texts, OPT excluded",
+    "mage_accuracy": 0.668,
+    "mage_balanced_accuracy": 0.668,
+    "human_specificity": 0.802,
+    "hc3_accuracy": 0.985,
+    "ai_recall_by_family": {
+      "GPT-3.5 / davinci": {
+        "n": 117,
+        "recall": 0.8632478632478633
+      },
+      "LLaMA": {
+        "n": 64,
+        "recall": 0.796875
+      },
+      "OPT (held out)": {
+        "n": 145,
+        "recall": 0.32413793103448274
+      },
+      "FLAN-T5 / T0": {
+        "n": 113,
+        "recall": 0.40707964601769914
+      },
+      "GLM / BLOOM / GPT-J / NeoX": {
+        "n": 61,
+        "recall": 0.36065573770491804
+      }
+    }
+  }
+}

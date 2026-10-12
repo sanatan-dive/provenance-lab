@@ -1,0 +1,44 @@
+{
+  "name": "code_holdout_gpt_supcon",
+  "n_test": 1000,
+  "accuracy": 0.918,
+  "precision": 0.9213709677419355,
+  "recall": 0.914,
+  "f1": 0.9176706827309237,
+  "auc_roc": 0.975556,
+  "epochs_run": 3,
+  "best_epoch": 1,
+  "supcon_weight": 0.5,
+  "train_seconds": 906,
+  "smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.13310145111754537,
+      "train_acc": 0.95,
+      "val_loss": 0.19689779239706695,
+      "val_acc": 0.928125
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.07187028069747611,
+      "train_acc": 0.971875,
+      "val_loss": 0.2571785133477533,
+      "val_acc": 0.940625
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.03590181872714311,
+      "train_acc": 0.978125,
+      "val_loss": 0.21289612386026419,
+      "val_acc": 0.946875
+    }
+  ],
+  "train_acc_best": 0.95,
+  "val_acc_best": 0.928125,
+  "n_train": 3200,
+  "use_handcrafted": true,
+  "max_len": 256,
+  "holdout_generator": "gpt",
+  "generalization_gap": 0.03199999999999992
+}

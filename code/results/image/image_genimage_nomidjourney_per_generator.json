@@ -1,0 +1,34 @@
+{
+  "Real": {
+    "n": 1750,
+    "accuracy": 0.9137142857142857
+  },
+  "ADM": {
+    "n": 250,
+    "accuracy": 0.844
+  },
+  "BigGAN": {
+    "n": 250,
+    "accuracy": 0.992
+  },
+  "GLIDE": {
+    "n": 250,
+    "accuracy": 1.0
+  },
+  "Midjourney": {
+    "n": 250,
+    "accuracy": 0.564
+  },
+  "SD15": {
+    "n": 250,
+    "accuracy": 0.896
+  },
+  "VQDM": {
+    "n": 250,
+    "accuracy": 0.856
+  },
+  "Wukong": {
+    "n": 250,
+    "accuracy": 0.92
+  }
+}

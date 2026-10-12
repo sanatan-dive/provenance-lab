@@ -1,0 +1,45 @@
+{
+  "name": "text_bert_ce",
+  "n_test": 1000,
+  "accuracy": 0.989,
+  "precision": 0.9803536345776032,
+  "recall": 0.998,
+  "f1": 0.9890981169474727,
+  "auc_roc": 0.9995879999999999,
+  "epochs_run": 3,
+  "best_epoch": 2,
+  "supcon_weight": 0.0,
+  "train_seconds": 2215,
+  "smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.062423916067928076,
+      "train_acc": 0.9775,
+      "val_loss": 0.13996612736955286,
+      "val_acc": 0.9575
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.0012212612386792898,
+      "train_acc": 1.0,
+      "val_loss": 0.03819588272424881,
+      "val_acc": 0.99
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.26153179290224216,
+      "train_acc": 0.92,
+      "val_loss": 0.4688839756697416,
+      "val_acc": 0.8975
+    }
+  ],
+  "train_acc_best": 1.0,
+  "val_acc_best": 0.99,
+  "modality": "text",
+  "dataset": "HC3/all",
+  "n_train": 4000,
+  "use_handcrafted": true,
+  "max_len": 256,
+  "generalization_gap": 0.01100000000000001
+}

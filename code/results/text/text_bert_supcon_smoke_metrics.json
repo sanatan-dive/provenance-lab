@@ -1,0 +1,18 @@
+{
+  "name": "text_bert_supcon_smoke",
+  "n_test": 32,
+  "accuracy": 0.5625,
+  "precision": 0.5333333333333333,
+  "recall": 1.0,
+  "f1": 0.6956521739130435,
+  "auc_roc": 0.9921875,
+  "epochs": 1,
+  "supcon_weight": 0.5,
+  "train_seconds": 6,
+  "smoke": true,
+  "modality": "text",
+  "dataset": "HC3/all",
+  "n_train": 64,
+  "use_handcrafted": true,
+  "max_len": 256
+}

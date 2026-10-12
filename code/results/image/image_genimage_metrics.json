@@ -1,0 +1,47 @@
+{
+  "name": "image_genimage",
+  "n_test": 3500,
+  "accuracy": 0.9065714285714286,
+  "precision": 0.9077363896848137,
+  "recall": 0.9051428571428571,
+  "f1": 0.9064377682403434,
+  "auc_roc": 0.9711168979591839,
+  "epochs_run": 3,
+  "best_epoch": 2,
+  "supcon_weight": 0.5,
+  "train_seconds": 813,
+  "smoke": false,
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.09711609679189595,
+      "train_acc": 0.9630681818181818,
+      "val_loss": 0.21238359459808895,
+      "val_acc": 0.9164285714285715
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.03155465648424896,
+      "train_acc": 0.9914772727272727,
+      "val_loss": 0.1993767340694155,
+      "val_acc": 0.93
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.02830958012914793,
+      "train_acc": 0.9921875,
+      "val_loss": 0.23111773256744658,
+      "val_acc": 0.9285714285714286
+    }
+  ],
+  "train_acc_best": 0.9914772727272727,
+  "val_acc_best": 0.93,
+  "vit": "WinKawaks/vit-small-patch16-224",
+  "use_handcrafted": true,
+  "use_freq": true,
+  "dataset": "Tiny-GenImage",
+  "n_train": 14000,
+  "holdout": null,
+  "batch_size": 32,
+  "generalization_gap": 0.08490584415584412
+}
