@@ -10,4 +10,4 @@ A local web app that checks whether an essay, a Python file, an image or a voice
 | `Report/` | Project report (`Project_Report.pdf`) and the scripts that build it. |
 | `Presentation/` | Slides (`Provenance_Lab.pdf`) and the script that builds them. |
 
-Datasets and model checkpoints are not in the repo because they are too large. The datasets download from Hugging Face, and `code/README.md` shows how to retrain the models.
+**To set it up on your own computer, follow [SETUP.md](SETUP.md).** It covers the environment, downloading the trained models and demo samples from the [v1.0 release](https://github.com/sanatan-dive/provenance-lab/releases/tag/v1.0), downloading every dataset, and retraining every model.
